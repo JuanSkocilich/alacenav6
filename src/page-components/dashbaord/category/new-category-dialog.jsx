@@ -22,7 +22,7 @@ export function NewCategoryDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="flex gap-2"><PlusCircle className="size-5" /> Agregar</Button>
+        <Button className="flex gap-2 w-full sm:w-auto"><PlusCircle className="size-5" /> Agregar</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] w-[90%] rounded-md">
         <DialogHeader>

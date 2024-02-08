@@ -24,16 +24,18 @@ import { DeleteCategoryDialog } from "./delete-category-dialog";
 
 export function CategoryCard({ category }) {
   return (
-    <Card className="pt-6">
-      <CardContent>
-        <div className="flex flex-row gap-3">
-          <h2>{category.name}</h2>
-          <div className="flex justify-between w-full">
-            <EditCategoryDialog />
-            <DeleteCategoryDialog />
-          </div>
+    <Card className="w-full relative">
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
+          <span className="">{category.name}</span>
         </div>
-      </CardContent>
+
+        <div className="flex justify-between">
+          <EditCategoryDialog />
+          <DeleteCategoryDialog />
+        </div>
+      </CardHeader>
+      {/* <CardContent></CardContent> */}
     </Card>
   );
 }

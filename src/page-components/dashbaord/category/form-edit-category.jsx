@@ -33,19 +33,24 @@ const FormSchema = z.object({
   name: z.string().trim().min(1, "El nombre es requerido").max(40, "Nombre demasiado largo"),
 });
 
-export function NewCategoryForm({ setOpen }) {
+const newData = {
+  name: "asdsa",
+};
+
+export function EditCategoryForm({ setOpen }) {
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      name: "",
+      name: "nombre1",
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = ({ name }) => {
+    console.log(name);
     setOpen(false);
-    toast(`"${data.name}" creado con exito!`, {
+    toast(`"${newData.name}" editada con exito!`, {
       type: "success",
+      description: `${name !== newData.name ? `Nombre cambiado a "${name}"` : ""}`,
     });
   };
 
