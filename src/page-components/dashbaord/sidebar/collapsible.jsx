@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ScrollAreaDemo from "@/page-components/scroll";
+import { MoveDown, X, MoveUp } from "lucide-react";
 
 export function CollapsibleDemo() {
   const pathname = usePathname();
@@ -35,7 +36,7 @@ export function CollapsibleDemo() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2" className="border-none">
-        <Link href="/dashboard/products">
+        <Link href={`${pathname !== "/dashboard/products" ? "/dashboard/products" : "#"}`}>
           <AccordionTrigger
             className={`pl-3 pr-3 hover:bg-accent rounded-md ${
               pathname === "/dashboard/products" && "bg-accent"
@@ -45,42 +46,61 @@ export function CollapsibleDemo() {
           </AccordionTrigger>
         </Link>
         <AccordionContent className="pl-3 pr-3 mt-3 pb-0">
+          <Link href="/dashboard/products" className="flex items-center">
+            <Button variant="ghost" className="w-[50%] flex gap-2">
+              <X /> Limpiar
+            </Button>
+            <Button variant="ghost" className="w-[50%] flex gap-2">
+              <MoveDown size={20} /> asd
+            </Button>
+          </Link>
           <Link href="/dashboard/products">
-            <Button variant="ghost" className="justify-start w-full">
-              Todos
+            <Button variant="ghost" className="flex justify-between w-full">
+              <span>Todos</span>
+              <span>55</span>
             </Button>
           </Link>
           <ScrollAreaDemo bg>
             <Link href="/dashboard/products">
-              <Button variant="ghost" className="justify-start w-full">
-                Option 2
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>6</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 3
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>9</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 4
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>11</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 5
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>7</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 6
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>8</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 7
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>1</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 8
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>23</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 9
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>14</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 10
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>18</span>
               </Button>
-              <Button variant="ghost" className="justify-start w-full">
-                Option 11
+              <Button variant="ghost" className="flex justify-between w-full">
+                <span>Option</span>
+                <span>19</span>
               </Button>
             </Link>
           </ScrollAreaDemo>

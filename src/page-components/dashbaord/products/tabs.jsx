@@ -29,10 +29,30 @@ export function TabsDemo() {
     <Tabs defaultValue="all-products">
       <ScrollAreaDemo className="max-h-[165px]">
         <TabsList className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,180px),1fr))]">
-          <TabsTrigger value="all-products">Todos 55</TabsTrigger>
-          <TabsTrigger value="option2">Por vencer 12</TabsTrigger>
-          <TabsTrigger value="option3">Vencidos 5</TabsTrigger>
-          <TabsTrigger value="option4">Faltantes 2</TabsTrigger>
+          <TabsTrigger value="all-products">
+            <div className="w-full flex justify-between">
+              <span>Todos</span>
+              <span>55</span>
+            </div>
+          </TabsTrigger>
+          <TabsTrigger value="option2">
+            <div className="w-full flex justify-between">
+              <span>Por vencer</span>
+              <span>12</span>
+            </div>
+          </TabsTrigger>
+          <TabsTrigger value="option3">
+            <div className="w-full flex justify-between">
+              <span>Vencidos</span>
+              <span>5</span>
+            </div>
+          </TabsTrigger>
+          <TabsTrigger value="option4">
+            <div className="w-full flex justify-between">
+              <span>Faltantes</span>
+              <span>2</span>
+            </div>
+          </TabsTrigger>
         </TabsList>
       </ScrollAreaDemo>
       <TabsContent value="all-products">
